@@ -38,7 +38,6 @@ test("Simple Alert TC", async ({ page }) => {
 });
 
 // Test for Confirmation Alert box
-
 test("Confirmation Alert Box", async ({ page }) => {
   await page.goto("https://demo.automationtesting.in/Alerts.html");
   const confirmAlert = page.getByText("Alert with OK & Cancel ");
