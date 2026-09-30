@@ -41,7 +41,7 @@ test("Simple Alert TC", async ({ page }) => {
 
 // Test for Confirmation Alert box
 
-test.only("Confirmation Alert Box", async ({page})=>
+test("Confirmation Alert Box", async ({page})=>
 {
     await page.goto("https://demo.automationtesting.in/Alerts.html");
 const confirmAlert=page.getByText("Alert with OK & Cancel ")
@@ -72,5 +72,38 @@ await frameele.getByRole("button",{name:"close"}).click()
 await AlertBtn.click()
 
 expect(confirmtxt).toHaveText("You pressed Ok")
+
+})
+
+// Test for Prompt Alert box
+
+test.only("Prompt Alert Box", async ({page})=>
+{
+    await page.goto("https://demo.automationtesting.in/Alerts.html");
+const PromptAlert=page.getByText("Alert with Textbox ")
+const AlertBtn=page.getByRole("button",{name: "click the button to demonstrate the prompt box "})
+const promptText=page.locator("#demo1")
+page.on("dialog", async (dialog)=>
+{
+    const alerttype=dialog.type()
+    const alertmessage=dialog.message()
+
+    console.log(`The type of dialog is ${alerttype}`);
+    console.log(`The messgae in dialog is ${alertmessage}`);
+
+    dialog.accept("everyone")
+
+})
+
+// handling frame
+const frameele=page.frameLocator("#aswift_5")
+await PromptAlert.click()
+await expect(frameele.getByRole("button",{name:"close"})).toBeVisible()
+await frameele.getByRole("button",{name:"close"}).click()
+
+
+await AlertBtn.click()
+console.log(`Confirmation point: ${await promptText.innerText()}`)
+await expect(promptText).toHaveText("Hello everyone How are you today")
 
 })
