@@ -73,7 +73,7 @@ test("Confirmation Alert Box", async ({ page }) => {
 test.only("Prompt Alert Box", async ({ page }) => {
   await page.goto("https://demo.automationtesting.in/Alerts.html");
   const PromptAlert = page.getByText("Alert with Textbox ");
-  const AlertBtn = page.getByRole("button", {
+  const promptAlertBtn = page.getByRole("button", {
     name: "click the button to demonstrate the prompt box ",
   });
   const promptText = page.locator("#demo1");
@@ -92,8 +92,7 @@ test.only("Prompt Alert Box", async ({ page }) => {
   await PromptAlert.click();
   await expect(frameele.getByRole("button", { name: "close" })).toBeVisible();
   await frameele.getByRole("button", { name: "close" }).click();
-
-  await AlertBtn.click();
+  await promptAlertBtn.click();
   console.log(`Confirmation point: ${await promptText.innerText()}`);
   await expect(promptText).toHaveText("Hello everyone How are you today");
 });
