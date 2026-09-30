@@ -18,7 +18,7 @@ test("Simple Alert TC", async ({ page }) => {
     const alertMessage = dialog.message();
 
     console.log(`The type of dialog is ${alertType}`);
-    console.log(`The messgae in dialog is ${alertMessage}`);
+    console.log(`The message in dialog is ${alertMessage}`);
 
     // Asserting the alert type
     expect(alertType).toContain("alert");
@@ -51,7 +51,7 @@ test("Confirmation Alert Box", async ({ page }) => {
     const alertmessage = dialog.message();
 
     console.log(`The type of dialog is ${alerttype}`);
-    console.log(`The messgae in dialog is ${alertmessage}`);
+    console.log(`The message in dialog is ${alertmessage}`);
 
     expect(alerttype).toContain("confirm");
     expect(alertmessage).toContain("Press a Button !");
@@ -70,7 +70,7 @@ test("Confirmation Alert Box", async ({ page }) => {
 });
 
 // Test for Prompt Alert box
-test.only("Prompt Alert Box", async ({ page }) => {
+test("Prompt Alert Box", async ({ page }) => {
   await page.goto("https://demo.automationtesting.in/Alerts.html");
   const PromptAlert = page.getByText("Alert with Textbox ");
   const promptAlertBtn = page.getByRole("button", {
@@ -82,7 +82,7 @@ test.only("Prompt Alert Box", async ({ page }) => {
     const alertmessage = dialog.message();
 
     console.log(`The type of dialog is ${alerttype}`);
-    console.log(`The messgae in dialog is ${alertmessage}`);
+    console.log(`The message in Prompt dialog is ${alertmessage}`);
 
     dialog.accept("everyone");
   });
@@ -92,7 +92,8 @@ test.only("Prompt Alert Box", async ({ page }) => {
   await PromptAlert.click();
   await expect(frameele.getByRole("button", { name: "close" })).toBeVisible();
   await frameele.getByRole("button", { name: "close" }).click();
+
   await promptAlertBtn.click();
-  console.log(`Confirmation point: ${await promptText.innerText()}`);
+  console.log(`Confirmation point : ${await promptText.innerText()}`);
   await expect(promptText).toHaveText("Hello everyone How are you today");
 });
