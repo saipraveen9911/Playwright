@@ -68,7 +68,7 @@ A --> W[Retries & Reports]
 ---
 
 <details>
-  <summary> <b> Playwright Concepts </b>  &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2" /> </summary>
+  <summary> <b> Playwright Concepts </b>  &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2?style=for-the-badge" /> </summary>
 <ol type=1>
 <li> Playwright Architecture</li>
 
@@ -79,7 +79,7 @@ A --> W[Retries & Reports]
 <li> Xpath</li>
     </ol>
 </li>
-<li> Mouse actions &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2" />
+<li> Mouse actions &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2?style=for-the-badge" />
   <ol type=I>
 <li> Hover &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" /> </li>
 <li> Right Click &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" /></li>
@@ -116,4 +116,4 @@ A --> W[Retries & Reports]
 </details>
 
 &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" />
-&emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2??style=for-the-badge" />
+&emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2?style=for-the-badge" />
