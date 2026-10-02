@@ -1,4 +1,4 @@
-# 📘 TypeScript Learning Roadmap
+# 📘 Playwright Learning Roadmap
 
 <div align="center">
 
@@ -25,15 +25,13 @@ The goal is not just to learn Playwright syntax, but to understand how Playwrigh
 - 🛠️ Reusable utilities
 - 📦 Scalable automation architecture
 - 🚀 CI/CD-ready test frameworks
-
 ---
-
 <details>
-  <summary> <b> Playwright Practise Questions </b> </summary>
-</details>
-
-
+  <summary>
+    
 # 🗺️ Playwright Learning Roadmap
+
+</summary>
 
 ```mermaid
 
@@ -60,4 +58,54 @@ A --> T[Traces]
 A --> U[Playwright Configuration]
 A --> V[Parallel Execution]
 A --> W[Retries & Reports]
+
+```
+
+</details>
+
+---
+
+<details>
+  <summary> <b> Playwright Concepts </b> </summary>
+<ol type=1>
+<li> Playwright Architecture</li>
+
+<li> Locators
+  <ol type=I>
+<li> Inbuilt Locators</li>
+<li> CSS selector</li>
+<li> Xpath</li>
+    </ol>
+</li>
+<li> Mouse actions
+  <ol type=I>
+<li> Hover</li>
+<li> Right Click</li>
+<li> Double click</li>
+<li> Drag and drop</li>
+<li> horizontal slider</li>
+<li> vertical slider</li>
+    </ol>
+</li>
+<li> Keyboard actions
+  <ol type=I>
+<li> single press</li>
+<li>holdiing key</li>
+    </ol>
+</li>
+<li> Radio Button</li>
+<li> Checkboxes </li>
+<li> buttons </li>
+<li> File upload/Download</li>
+<li> Alerts/Dialog</li>
+<li> Snapshots / Videos</li>
+<li> Assertions </li>
+</ol>
+</details>
+
+---
+
+<details>
+  <summary> <b> Playwright Practise Questions </b> </summary>
+</details>
 
