@@ -16,18 +16,44 @@ test("Hover", async ({ page }) => {
 });
 
 test.only("Right click", async ({ page }) => {
-    await page.goto("https://www.playwrightautomation.com/practice.html#section-mouse")
-    const Mouseright=page.getByRole("button",{name: 'Right Click Me'})
-    const rightmenu=page.getByRole("menuitem",{name:'Edit'})
-   
-    await expect(Mouseright).toBeVisible()
-    await Mouseright.click({button:'right'})
-     await rightmenu.hover()
+  await page.goto(
+    "https://www.playwrightautomation.com/practice.html#section-mouse",
+  );
 
-    await expect(rightmenu).toBeVisible()
-    page.screenshot({path: './screenshot.png'})
-    await rightmenu.click()
-    await expect(page.locator("#context-menu-result")).toHaveText("Edit")
-    page.screenshot({path: './screenshot1.png'})
-    await page.waitForTimeout(3000)
+  //locators
+  const Mouseright = page.getByRole("button", { name: "Right Click Me" });
+  const rightmenu = page.getByRole("menuitem", { name: "Edit" });
+
+  //Assertion
+  await expect(Mouseright).toBeVisible();
+
+  //mouse Right click
+  await Mouseright.click({ button: "right" });
+
+  // Mouse Hover
+  await rightmenu.hover();
+
+  await expect(rightmenu).toBeVisible();
+  page.screenshot({ path: "./screenshot.png" });
+  await rightmenu.click();
+  await expect(page.locator("#context-menu-result")).toHaveText("Edit");
+  page.screenshot({ path: "./screenshot1.png" });
+  await page.waitForTimeout(3000);
 });
+
+test.only("Double Click",async ({page})=>
+{
+    await page.goto(
+    "https://www.playwrightautomation.com/practice.html#section-mouse",
+  );
+
+  const dbltextbox2=page.getByPlaceholder("Double-click Copy Text →")
+ const dblbutton=page.getByRole("button",{name: 'Copy Text'})
+
+ dblbutton.dblclick()
+ console.log(dbltextbox2.innerText())
+
+ await expect(dbltextbox2).toHaveText("Hello Automation!")
+ page.waitForTimeout(3000)
+
+})
