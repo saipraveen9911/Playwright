@@ -25,7 +25,9 @@ The goal is not just to learn Playwright syntax, but to understand how Playwrigh
 - 🛠️ Reusable utilities
 - 📦 Scalable automation architecture
 - 🚀 CI/CD-ready test frameworks
+
 ---
+
 <details>
   <summary>
     
@@ -114,5 +116,4 @@ A --> W[Retries & Reports]
 </details>
 
 &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" />
-&emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2" />
-
+&emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2??style=for-the-badge" />
