@@ -66,7 +66,7 @@ A --> W[Retries & Reports]
 ---
 
 <details>
-  <summary> <b> Playwright Concepts </b> </summary>
+  <summary> <b> Playwright Concepts </b>  &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2" /> </summary>
 <ol type=1>
 <li> Playwright Architecture</li>
 
