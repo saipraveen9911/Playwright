@@ -49,7 +49,7 @@ test("Right click", async ({ page }) => {
   await page.waitForTimeout(3000);
 });
 
-test.only("Double Click", async ({ page }) => {
+test("Double Click", async ({ page }) => {
   await page.goto(
     "https://www.playwrightautomation.com/practice.html#section-mouse",
   );
@@ -70,3 +70,18 @@ test.only("Double Click", async ({ page }) => {
   await expect(dbltextbox2).toHaveValue("Hello Automation!");
   await page.waitForTimeout(3000);
 });
+
+test("drag and drop",async ({page})=>
+{
+  
+})
+
+test("Single Slider",({page})=>
+{
+
+})
+
+test("double slider",({page})=>
+{
+  
+})
