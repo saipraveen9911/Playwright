@@ -15,7 +15,7 @@ test("Hover", async ({ page }) => {
   await page.waitForTimeout(2000);
 });
 
-test.only("Right click", async ({ page }) => {
+test("Right click", async ({ page }) => {
   await page.goto(
     "https://www.playwrightautomation.com/practice.html#section-mouse",
   );
@@ -34,7 +34,7 @@ test.only("Right click", async ({ page }) => {
   await rightmenu.hover();
 
   await expect(rightmenu).toBeVisible();
-  page.screenshot({ path: "./screenshot.png" });
+  
   await rightmenu.click();
   await expect(page.locator("#context-menu-result")).toHaveText("Edit");
   page.screenshot({ path: "./screenshot1.png" });
@@ -47,13 +47,20 @@ test.only("Double Click",async ({page})=>
     "https://www.playwrightautomation.com/practice.html#section-mouse",
   );
 
-  const dbltextbox2=page.getByPlaceholder("Double-click Copy Text →")
+  // textbox
+  const dbltextbox2=page.locator("#field2")
+
+  // double click button
  const dblbutton=page.getByRole("button",{name: 'Copy Text'})
 
- dblbutton.dblclick()
- console.log(dbltextbox2.innerText())
+ // performing double click action
+ await dblbutton.dblclick()
 
- await expect(dbltextbox2).toHaveText("Hello Automation!")
- page.waitForTimeout(3000)
+
+ console.log(await dbltextbox2.inputValue())
+
+ //Assertion on text in textbox
+ await expect(dbltextbox2).toHaveValue("Hello Automation!");
+ await page.waitForTimeout(3000)
 
 })
