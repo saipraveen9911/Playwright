@@ -24,8 +24,9 @@ test("Right click", async ({ page }) => {
     "https://www.playwrightautomation.com/practice.html#section-mouse",
   );
 
-  //locators
+  //locator for reght click button
   const Mouseright = page.getByRole("button", { name: "Right Click Me" });
+  // locator for submenu when rightclick action performed
   const rightmenu = page.getByRole("menuitem", { name: "Edit" });
 
   //Assertion
@@ -39,9 +40,12 @@ test("Right click", async ({ page }) => {
 
   await expect(rightmenu).toBeVisible();
 
+  // selecting the hovered right menu
   await rightmenu.click();
+
+  // assertion
   await expect(page.locator("#context-menu-result")).toHaveText("Edit");
-  page.screenshot({ path: "./screenshot1.png" });
+
   await page.waitForTimeout(3000);
 });
 
@@ -50,7 +54,7 @@ test.only("Double Click", async ({ page }) => {
     "https://www.playwrightautomation.com/practice.html#section-mouse",
   );
 
-  // textbox
+  // textbox to check the performed action
   const dbltextbox2 = page.locator("#field2");
 
   // double click button
@@ -59,6 +63,7 @@ test.only("Double Click", async ({ page }) => {
   // performing double click action
   await dblbutton.dblclick();
 
+  // Reads the value from the TextBox
   console.log(await dbltextbox2.inputValue());
 
   //Assertion on text in textbox
