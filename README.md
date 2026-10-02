@@ -77,12 +77,12 @@ A --> W[Retries & Reports]
 <li> Xpath</li>
     </ol>
 </li>
-<li> Mouse actions
+<li> Mouse actions &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2" />
   <ol type=I>
-<li> Hover</li>
-<li> Right Click</li>
-<li> Double click</li>
-<li> Drag and drop</li>
+<li> Hover &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" /> </li>
+<li> Right Click &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" /></li>
+<li> Double click &emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" /></li>
+<li> Drag and drop </li>
 <li> horizontal slider</li>
 <li> vertical slider</li>
     </ol>
@@ -97,6 +97,10 @@ A --> W[Retries & Reports]
 <li> Checkboxes </li>
 <li> buttons </li>
 <li> File upload/Download</li>
+<ol type=I>
+<li> single file upload</li>
+<li> multi file upload </li>
+    </ol>
 <li> Alerts/Dialog</li>
 <li> Snapshots / Videos</li>
 <li> Assertions </li>
@@ -108,4 +112,7 @@ A --> W[Retries & Reports]
 <details>
   <summary> <b> Playwright Practise Questions </b> </summary>
 </details>
+
+&emsp;<img src="https://img.shields.io/badge/Completed-success?style=flat" />
+&emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2" />
 
