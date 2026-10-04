@@ -70,7 +70,7 @@ test.only("Partial checked", async ({ page }) => {
   await selectallCB.check();
   for (const day in DaysCB.slice(0, 5)) {
     await DaysCB[day].uncheck();
-    console.log(`unchecked ${day}`)
+    console.log(`unchecked ${day}`);
   }
 
   await page.waitForTimeout(3000);

@@ -71,17 +71,8 @@ test("Double Click", async ({ page }) => {
   await page.waitForTimeout(3000);
 });
 
-test("drag and drop",async ({page})=>
-{
-  
-})
+test("drag and drop", async ({ page }) => {});
 
-test("Single Slider",({page})=>
-{
+test("Single Slider", ({ page }) => {});
 
-})
-
-test("double slider",({page})=>
-{
-  
-})
+test("double slider", ({ page }) => {});
