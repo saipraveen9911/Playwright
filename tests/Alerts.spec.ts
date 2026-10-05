@@ -69,7 +69,7 @@ test("Confirmation Alert Box", async ({ page }) => {
 });
 
 // Test for Prompt Alert box
-test("Prompt Alert Box", async ({ page }) => {
+test.only("Prompt Alert Box", async ({ page }) => {
   await page.goto("https://demo.automationtesting.in/Alerts.html");
   const PromptAlert = page.getByText("Alert with Textbox ");
   const promptAlertBtn = page.getByRole("button", {
@@ -82,8 +82,9 @@ test("Prompt Alert Box", async ({ page }) => {
 
     console.log(`The type of dialog is ${alerttype}`);
     console.log(`The message in Prompt dialog is ${alertmessage}`);
-
-    dialog.accept("everyone");
+await page.waitForTimeout(3000)
+    //dialog.accept("everyone");
+    dialog.accept()
   });
 
   // handling frame
@@ -93,6 +94,7 @@ test("Prompt Alert Box", async ({ page }) => {
   await frameele.getByRole("button", { name: "close" }).click();
 
   await promptAlertBtn.click();
+  await page.waitForTimeout(2000)
   console.log(`Confirmation point : ${await promptText.innerText()}`);
-  await expect(promptText).toHaveText("Hello everyone How are you today");
+  await expect(promptText).toHaveText("Hello Automation Testing user How are you today");
 });
