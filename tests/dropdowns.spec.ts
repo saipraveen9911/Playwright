@@ -28,18 +28,24 @@ test("multi select Dropdown ", async ({ page }) => {
 
   //await dropdown.selectOption(['Blue','Green'])
 
-  await dropdown.selectOption([{ label: "Red" }, { label: "White" }]);
+  //await dropdown.selectOption([{ label: "Red" }, { label: "White" }]);
 
-  // assignment - try with index and value
+  // assignment -  with index
+  //await dropdown.selectOption([{index:2},{index:4}])
+  
+  //assignment with value
+  await dropdown.selectOption([{value:'blue'},{value:'yellow'}])
+
+
   await page.waitForTimeout(5000);
 });
+
+
 
 test.only("Auto suggest Dropdown ", async ({ page }) => {
   await page.goto("https://www.flipkart.com/");
 
   await page.waitForTimeout(5000);
-  
-  await page.locator(".b3wTlE").click()
 
   await page.locator("input[name='q']").nth(0).fill("smart");
 
