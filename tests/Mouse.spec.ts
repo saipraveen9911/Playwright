@@ -71,7 +71,32 @@ test("Double Click", async ({ page }) => {
   await page.waitForTimeout(3000);
 });
 
-test("drag and drop", async ({ page }) => {});
+test.only("drag and drop", async ({ page }) => {
+  await page.goto(
+    "https://www.playwrightautomation.com/practice.html#section-mouse",
+  );
+  const rome = page.getByTestId("drag-rome");
+  const washington = page.getByTestId("drag-washington");
+  const paris = page.locator("div[data-match='france']");
+
+  const italy = page.locator("#drop-italy");
+  const USA = page.locator("#drop-usa");
+  const france = page.locator("div[data-country='france']");
+
+  await page.waitForTimeout(2000);
+  await rome.dragTo(italy);
+
+  await washington.hover();
+  await page.mouse.down();
+  await USA.hover();
+  await page.mouse.up();
+
+  await paris.dragTo(france);
+
+ expect(await page.locator("p.text-xs.text-slate-500.mt-2").nth(6).innerText()).toContain("Matched: 3 / 3")
+
+  await page.waitForTimeout(5000);
+});
 
 test("Single Slider", ({ page }) => {});
 
