@@ -1,13 +1,45 @@
 import { test, expect, Locator } from "@playwright/test";
 
-test("playwright Alt Text locator", async ({ page }) => {
-  await page.goto("https://demo.nopcommerce.com/");
-  await page.waitForTimeout(10000);
-  const locat = page.locator("input[aria-label='Verify you are human']");
+test("test using page.getbyRole", async ({ page }) => {
+  await page.goto("https://www.saucedemo.com/");
 
-  await expect(locat).toBeVisible();
-  await locat.click();
-  const AltTextLocator: Locator = page.getByAltText("nopCommerce demo store");
-  await page.waitForTimeout(50000);
-  await expect(AltTextLocator).toBeVisible();
+  // get by place holder method
+  const Username: Locator = page.getByRole("textbox", { name: "Username" });
+  const password: Locator = page.getByRole("textbox", { name: "Password" });
+  const LoginBTN: Locator = page.getByRole("button", { name: "Login" });
+  await Username.fill("standard_user");
+  await password.fill("secret_sauce");
+  await LoginBTN.click();
+
+  await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
 });
+
+test("Test using Page.getByPlaceholder()", async ({ page }) => {
+  await page.goto("https://www.saucedemo.com/");
+  const Username: Locator = page.getByPlaceholder("Username");
+  const password: Locator = page.getByPlaceholder("Password");
+  // get byrole method
+  const LoginBTN: Locator = page.getByRole("button", { name: "Login" });
+  await Username.fill("standard_user");
+  await password.fill("secret_sauce");
+  await LoginBTN.click();
+
+  await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
+});
+
+test("Test using getbyText",async ({page}) =>
+{
+    await page.goto("https://www.saucedemo.com/");
+  const Username: Locator = page.getByPlaceholder("Username");
+  const password: Locator = page.getByPlaceholder("Password");
+
+  // get by text method
+  const LoginBTN: Locator = page.getByText("Login");
+  await Username.fill("standard_user");
+  await password.fill("secret_sauce");
+  await LoginBTN.click();
+
+  await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
+})
+
+
