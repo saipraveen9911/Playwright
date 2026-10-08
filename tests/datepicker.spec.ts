@@ -38,14 +38,12 @@ test("test using page.Locator", async ({ page }) => {
 
   while (true) 
     {
-
         let currentmonth=await MonthElement.innerText() //Reading the month value from webpage and stored in variable
         let currentyear=await YearElement.innerText() // Reading the Year value from webpage and stored in variable
-        if (
-        Year.toString() === (currentyear) && Month === (currentmonth) )
+        if (Year.toString() === (currentyear) && Month === (currentmonth) )
         {
             //console.log("break loop")
-        break;
+            break;
         } 
         else if (Number(currentyear) != Year) 
         {
