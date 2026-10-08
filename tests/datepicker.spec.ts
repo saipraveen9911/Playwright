@@ -45,14 +45,14 @@ test("test using page.Locator", async ({ page }) => {
             //console.log("break loop")
             break;
         } 
-        else if (Number(currentyear) != Year) 
+        else if (Number(currentyear) != Year)  //checks for required year matching
         {
-            if (Number(currentyear) > Year) 
+            if (Number(currentyear) > Year) //checks for year is greater than required year
             {
                 console.log(`${Number(currentyear)} > ${Year}`)
                 await previousarrow.click();
             } 
-            else if (Number(currentyear) < Year) 
+            else if (Number(currentyear) < Year) //checks for year is less than required year
             {
             console.log(`${Number(currentyear)} < ${Year}`)
             await Nextarrow.click();
@@ -65,7 +65,7 @@ test("test using page.Locator", async ({ page }) => {
                 console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
                 await previousarrow.click();
             } 
-            else if (months.indexOf(currentmonth) < months.indexOf(Month)) 
+            else if (months.indexOf(currentmonth) < months.indexOf(Month)) //checks for month is less than required month using the array.indexof method
             {
                 console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
                 await Nextarrow.click();
