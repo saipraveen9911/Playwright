@@ -36,42 +36,53 @@ test("test using page.Locator", async ({ page }) => {
     .all();
 
 
-  while (true) {
+  while (true) 
+    {
 
-    let currentmonth=await MonthElement.innerText() //october
-    let currentyear=await YearElement.innerText() // 2026
-    if (
-      Year.toString() === (currentyear) && //2023
-      Month === (currentmonth) //november
-    ) {
-        console.log("break loop")
-      break;
-    } else if (Number(currentyear) != Year) {
-      if (Number(currentyear) > Year) {
-        console.log(`${Number(currentyear)} > ${Year}`)
-        await previousarrow.click();
-      } else if (Number(currentyear) < Year) {
-        console.log(`${Number(currentyear)} < ${Year}`)
-        await Nextarrow.click();
-      } 
-    }else if(Year.toString() === (currentyear) &&
-      Month != (currentmonth))
-        { //console.log(`${Number(currentyear)} === ${Year}`)
-            if (months.indexOf(currentmonth) > months.indexOf(Month)) {
-            console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
-          await previousarrow.click();
-        } else if (months.indexOf(currentmonth) < months.indexOf(Month)) {
-            console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
-          await Nextarrow.click();
+        let currentmonth=await MonthElement.innerText() //Reading the month value from webpage and stored in variable
+        let currentyear=await YearElement.innerText() // Reading the Year value from webpage and stored in variable
+        if (
+        Year.toString() === (currentyear) && Month === (currentmonth) )
+        {
+            //console.log("break loop")
+        break;
+        } 
+        else if (Number(currentyear) != Year) 
+        {
+            if (Number(currentyear) > Year) 
+            {
+                console.log(`${Number(currentyear)} > ${Year}`)
+                await previousarrow.click();
+            } 
+            else if (Number(currentyear) < Year) 
+            {
+            console.log(`${Number(currentyear)} < ${Year}`)
+            await Nextarrow.click();
+            } 
         }
-      }
+        else if(Year.toString() === (currentyear) && Month != (currentmonth))
+        { //console.log(`${Number(currentyear)} === ${Year}`)
+            if (months.indexOf(currentmonth) > months.indexOf(Month)) 
+            {
+                console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
+                await previousarrow.click();
+            } 
+            else if (months.indexOf(currentmonth) < months.indexOf(Month)) 
+            {
+                console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
+                await Nextarrow.click();
+            }
+        }
+
     }
   
-  for (let date of dateelements) {
-    if ((await date.innerText()) === Day[19].toString()) { //selecting date 20
-      date.click();
-      break;
+    for (let date of dateelements) 
+    {
+        if ((await date.innerText()) === Day[19].toString()) 
+        { //selecting date 20
+        date.click();
+        break;
+        }
     }
-  }
   await page.waitForTimeout(5000);
 });
