@@ -18,8 +18,10 @@ test("test using page.Locator", async ({ page }) => {
     "November",
     "December",
   ];
-  const Year = 2027;
-  const Month = months[10]; // November
+  const Year = 2027; // required Year 
+  const Month = months[10]; // required month November
+
+  // reading dates from the webpage
   const Day = await page
     .locator(".ui-datepicker-calendar td[data-handler='selectDay']")
     .allTextContents();
@@ -28,9 +30,10 @@ test("test using page.Locator", async ({ page }) => {
 
   const MonthElement = page.locator(".ui-datepicker-month");
   const YearElement = page.locator(".ui-datepicker-year");
-
   const previousarrow = page.locator("[data-handler='prev']");
   const Nextarrow = page.locator("[data-handler='next']");
+
+  // reading the Date webelements from webpage
   const dateelements = await page
     .locator(".ui-datepicker-calendar td[data-handler='selectDay']")
     .all();
@@ -60,7 +63,7 @@ test("test using page.Locator", async ({ page }) => {
         }
         else if(Year.toString() === (currentyear) && Month != (currentmonth))
         { //console.log(`${Number(currentyear)} === ${Year}`)
-            if (months.indexOf(currentmonth) > months.indexOf(Month)) 
+            if (months.indexOf(currentmonth) > months.indexOf(Month)) //checks for month is greater than required month using the array.indexof method
             {
                 console.log(`${months.indexOf(currentmonth) } > ${months.indexOf(Month)}`)
                 await previousarrow.click();
