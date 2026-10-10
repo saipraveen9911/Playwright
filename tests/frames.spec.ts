@@ -11,6 +11,7 @@ test("Frame Handling", async ({ page }) => {
   const frame4 = page.frame({
     url: "https://ui.vision/demo/webtest/frames/frame_4",
   });
+  
   const frame5 = page.frameLocator("[src='frame_5.html']");
 
   if (frame1) {
