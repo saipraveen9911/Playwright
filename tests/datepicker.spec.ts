@@ -165,30 +165,44 @@ test("Date Picker Type 1 optimised", async ({ page }) => {
   await page.waitForTimeout(5000);
 });
 
-test.only("Date picker type 2 dropdown ", async ({ page }) => {
+test("Date picker type 2 dropdown ", async ({ page }) => {
   await page.goto("https://testautomationpractice.blogspot.com/");
   await page.locator("#txtDate").click();
   const Year = 2030;
   const Month = 10;
-  const date=20;
+  const date = 20;
   await page
     .locator("[data-handler='selectMonth']")
     .selectOption({ value: Month.toString() }); //November
-    await page.waitForTimeout(3000)
+  await page.waitForTimeout(3000);
   await page
     .locator("[data-handler='selectYear']")
     .selectOption({ value: Year.toString() }); //2030
-    await page.waitForTimeout(3000)
+  await page.waitForTimeout(3000);
 
-await page.locator(`.ui-datepicker-calendar td a[data-date='${date}']`).click()
+  await page
+    .locator(`.ui-datepicker-calendar td a[data-date='${date}']`)
+    .click();
 
+  await page.waitForTimeout(2000);
 
-await page.waitForTimeout(2000)
-
- expect(await page.locator("#txtDate").inputValue()).toContain(
-    `${date}/${Month+1}/${Year}`,
+  expect(await page.locator("#txtDate").inputValue()).toContain(
+    `${date}/${Month + 1}/${Year}`,
   );
-await page.waitForTimeout(5000)
-
+  await page.waitForTimeout(5000);
 });
 
+test.only("date picker type 3", async ({ page }) => {
+  await page.goto("https://testautomationpractice.blogspot.com/");
+  await page.getByPlaceholder("Start Date").fill("2026-10-08");
+  await page.getByPlaceholder("End Date").fill("2026-10-15");
+  await page.locator("[class='submit-btn']").click();
+  const d1 = new Date("2026-10-08");
+  const d2 = new Date("2026-10-15");
+  const diff = (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24);
+  console.log(diff);
+  await page.waitForTimeout(5000);
+  expect(await page.locator("#result").innerText()).toContain(
+    `You selected a range of ${diff} days.`,
+  );
+});
