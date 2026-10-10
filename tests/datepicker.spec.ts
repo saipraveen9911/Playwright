@@ -109,7 +109,7 @@ test.only("Date Picker Type 1 optimised", async ({ page }) => {
   ];
   const Year = 2027; // required Year
   const Month = "November"; // required month November
-  const date = 19;
+  const date = 19; //required date 19
 
   await page.locator("#datepicker").isVisible({ timeout: 3000 });
   await page.locator("#datepicker").click();
@@ -122,6 +122,9 @@ test.only("Date Picker Type 1 optimised", async ({ page }) => {
   while (true) {
     let currentmonth = await MonthElement.innerText(); //Reading the month value from webpage and stored in variable
     let currentyear = await YearElement.innerText(); // Reading the Year value from webpage and stored in variable
+
+    console.log(`${currentyear} and ${currentmonth}`);
+
     if (Year.toString() === currentyear && Month === currentmonth) {
       console.log("break loop");
       break;
@@ -130,8 +133,6 @@ test.only("Date Picker Type 1 optimised", async ({ page }) => {
       Month != currentmonth
     ) //checks for required year matching
     {
-      console.log(`${currentyear} and ${currentmonth}`);
-
       if (
         Number(currentyear) > Year ||
         (Number(currentyear) === Year &&
