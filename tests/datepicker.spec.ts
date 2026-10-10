@@ -90,7 +90,7 @@ test("Date Picker Type 1", async ({ page }) => {
   await page.waitForTimeout(5000);
 });
 
-test.only("Date Picker Type 1 optimised", async ({ page }) => {
+test("Date Picker Type 1 optimised", async ({ page }) => {
   await page.goto("https://testautomationpractice.blogspot.com/");
 
   const monthsArray = [
@@ -107,7 +107,7 @@ test.only("Date Picker Type 1 optimised", async ({ page }) => {
     "November",
     "December",
   ];
-  const Year = 2027; // required Year
+  const Year = 2023; // required Year
   const Month = "November"; // required month November
   const date = 19; //required date 19
 
@@ -163,4 +163,31 @@ test.only("Date Picker Type 1 optimised", async ({ page }) => {
     `${monthsArray.indexOf(Month) + 1}/${date}/${Year}`,
   );
   await page.waitForTimeout(5000);
+});
+
+test.only("Date picker type 2 dropdown ", async ({ page }) => {
+  await page.goto("https://testautomationpractice.blogspot.com/");
+  await page.locator("#txtDate").click();
+  const Year = 2030;
+  const Month = 10;
+  const date=20;
+  await page
+    .locator("[data-handler='selectMonth']")
+    .selectOption({ value: Month.toString() }); //November
+    await page.waitForTimeout(3000)
+  await page
+    .locator("[data-handler='selectYear']")
+    .selectOption({ value: Year.toString() }); //2030
+    await page.waitForTimeout(3000)
+
+await page.locator(`.ui-datepicker-calendar td a[data-date='${date}']`).click()
+
+
+await page.waitForTimeout(2000)
+
+ expect(await page.locator("#txtDate").inputValue()).toContain(
+    `${date}/${Month+1}/${Year}`,
+  );
+await page.waitForTimeout(5000)
+
 });
