@@ -44,3 +44,5 @@ test("Download Text file", async ({ page }) => {
 console.log(fs.readFileSync(path1,"utf-8"))
   //  writeFileSync()
 });
+
+// Assignment implement same on the pdf file browser open file
