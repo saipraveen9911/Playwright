@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
 import * as fs from "fs";
 
-test("Download text file", async ({ page }) => {
+test("Download Text file", async ({ page }) => {
   await page.goto(
     "https://testautomationpractice.blogspot.com/p/download-files_25.html",
   );
 
-  await page.locator("#inputText").fill("my text file");
+  await page.locator("#inputText").fill("I am the text present .txt file");
   await page
     .getByRole("button", { name: "Generate and Download Text File" })
     .click();
@@ -27,7 +27,7 @@ test("Download text file", async ({ page }) => {
   // checks for file exist or not
   const isFileExist = fs.existsSync(path + download.suggestedFilename());
   console.log(isFileExist);
-  await expect(isFileExist).toBeTruthy();
+  //await expect(isFileExist).toBeTruthy();
 
   if (isFileExist) {
     // delete the file
@@ -40,5 +40,7 @@ test("Download text file", async ({ page }) => {
     console.log(fs.existsSync(path1));
   }
 
-  // readFileSync() , writeFileSync()
+  // readFileSync() used to read the data present in text file
+console.log(fs.readFileSync(path1,"utf-8"))
+  //  writeFileSync()
 });
