@@ -35,7 +35,7 @@ test("Download Text file", async ({ page }) => {
     await download.saveAs(path1);
     console.log(fs.existsSync(path1));
   } else {
-    fs.unlinkSync(path1);
+    
     await download.saveAs(path1);
     console.log(fs.existsSync(path1));
   }
