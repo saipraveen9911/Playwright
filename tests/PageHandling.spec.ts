@@ -30,7 +30,10 @@ test.only(" popup window handling", async () => {
 
   const popupwindow=contextA.pages()
  console.log(popupwindow.length)
- // console.log(await popuppage.title());
+ for(let a of popupwindow)
+ {
+ console.log(await a.title());
+ }
   await popuppage.waitForTimeout(5000);
   Browser.close();
 });
