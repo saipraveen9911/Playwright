@@ -68,7 +68,7 @@ A --> W[Retries & Reports]
 ---
 
 <details>
-  <summary> <strong> Playwright Concepts </strong>  &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2?style=for-the-badge" /> </summary>
+  <summary> <h2> Playwright Concepts </h2>  &emsp;<img src="https://img.shields.io/badge/In--Progress-8A2BE2?style=for-the-badge" /> </summary>
 <ol type=1>
 <li> Playwright Architecture</li>
 
@@ -112,9 +112,9 @@ A --> W[Retries & Reports]
 ---
 
 <details>
-  <summary> <strong> Playwright Interview Questions </strong> </summary>
+  <summary> <h2> Playwright Interview Questions </h2> </summary>
   <ol type=1> 
- <strong>General and Core Concepts </strong>
+ <h2>General and Core Concepts </h2>
    <li> What is Playwright?</li>
    <li>What are the key features of Playwright?</li>
    <li>What languages does Playwright support?</li>
@@ -126,7 +126,7 @@ A --> W[Retries & Reports]
  <li>What is the role of Expect?</li>
     <li>What is the difference between Page and Context?</li>
 
-<strong>Browser and Element Interactions</strong>
+<h2>Browser and Element Interactions</h2>
 
   <li>How do you handle a browser in Playwright?</li>
   <li>What is the use of Headless mode in Playwright?</li>
@@ -144,7 +144,7 @@ A --> W[Retries & Reports]
    <li>How do you debug tests in Playwright?</li>
     <li>How do you generate test report in Playwright?</li>
 
-<strong>Automation Strategies and Scenarios</strong>
+<h2>Automation Strategies and Scenarios</h2>
 
   <li>What is Page Object Model (POM) in Playwright?</li>
 
@@ -163,7 +163,7 @@ A --> W[Retries & Reports]
     <li>How do you test file download?</li>
     <li>How do you test WebSockets?</li>
 
-<strong>Advanced Performance and Maintenance</strong>
+<h2>Advanced Performance and Maintenance</h2>
 
   <li>How do you handle slow network?</li>
   <li>How do you test accessibility?</li>
