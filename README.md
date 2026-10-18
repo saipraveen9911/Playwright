@@ -146,7 +146,7 @@ A --> W[Retries & Reports]
 
 <b>Automation Strategies and Scenarios</b>
 
-    <li>What is Page Object Model (POM) in Playwright?</li>
+  <li>What is Page Object Model (POM) in Playwright?</li>
 
   <li>How do you wait in Playwright?</li>
   <li>How do you handle file upload?</li>
