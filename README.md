@@ -165,8 +165,8 @@ A --> W[Retries & Reports]
 
 <b>Advanced Performance and Maintenance</b>
 
-    <li>How do you handle slow network?</li>
-    <li>How do you test accessibility?</li>
+  <li>How do you handle slow network?</li>
+  <li>How do you test accessibility?</li>
 
   <li>How do you handle sessions and storage?</li>
     <li>How do you test in different browsers?</li>
