@@ -177,9 +177,6 @@ A --> W[Retries & Reports]
   <li>How do you test on different environments?</li>
   <li>How do you keep tests stable?</li>
 
-✅𝐏𝐥𝐚𝐲𝐰𝐫𝐢𝐠𝐡𝐭 𝐰𝐢𝐭𝐡 𝐀𝐈 𝐓𝐞𝐬𝐭𝐢𝐧𝐠 𝐓𝐫𝐚𝐢𝐧𝐢𝐧𝐠 𝐬𝐭𝐚𝐫𝐭𝐬 𝐨𝐧 𝟓𝐭𝐡 𝐎𝐜𝐭𝐨𝐛𝐞𝐫 𝟐𝟎𝟐𝟔! 𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫 𝐧𝐨𝐰 𝐟𝐨𝐫 𝐟𝐫𝐞𝐞 𝐝𝐞𝐦𝐨 𝐜𝐥𝐚𝐬𝐬𝐞𝐬:
-https://wa.link/gr8c64
-
   </ol>
 </details>
 
