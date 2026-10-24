@@ -226,6 +226,8 @@ test.only("Dynamic tables", async ({ page }) => {
       .nth(Column_CPU_index)
       .innerText(),
   );
+
+
   expect(
     await table_rows[Row_chrome_index].locator("td")
       .nth(Column_CPU_index)

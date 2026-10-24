@@ -18,6 +18,7 @@ test("Dropdown ", async ({ page }) => {
 
   // by using label
   await dropdown.selectOption({ label: "Japan" });
+  expect(dropdown).toHaveValue("japan")
 
   await page.waitForTimeout(5000);
 });
