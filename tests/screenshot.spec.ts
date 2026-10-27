@@ -62,15 +62,16 @@ test("page screenshot - 6 disable animation ", async ({ page }) => {
     animations: "disabled",
   });
 });
-test("page screenshot - 7 buffer ", async ({ page }) => {
+test.only("page screenshot - 7 buffer ", async ({ page },testinfo) => {
   const screenbuffer = await page.screenshot();
   console.log(screenbuffer.length);
+  testinfo.attach('screenshot',{body:screenbuffer,contentType:'image/png'})
 });
-test.only("Element screenshot - 8 ", async ({ page }) => {
+test("Element screenshot - 8 ", async ({ page }) => {
   const locator = page.getByTestId("input-address");
   await locator.screenshot({ path: "./screenshot/8_Element screenshot.png" });
 });
-test.only(" screenshot - 9 without background", async ({ page }) => {
+test(" screenshot - 9 without background", async ({ page }) => {
   const locator = page.getByTestId("input-address");
   await locator.screenshot({
     path: "./screenshot/8_Element screenshot.png",
